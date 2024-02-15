@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<div class="header-bar" style="display: flex; align-items: center; padding: 10px;">
+    <h3 style="margin-left: 20px;">Task Form</h3>
+    <a href="{% url 'tasks' %}" style="text-decoration: none; margin-left: auto;">&#8592; Go Back</a>
+</div>
+
+
+
+<div style="margin-left: 20px;">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}                           <!-- form. as_p – Render Django Forms as paragraph. -->
+        <input class="button" type="submit" value="Submit" style="margin-bottom: 20px;">
+    </form>
+</div>
+
+{% endblock content %}
